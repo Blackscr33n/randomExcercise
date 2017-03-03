@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Random Excercise
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <span text-center>Returns a random Excercise to steel your body</span>
+  <button block ion-button (click)="randomExcercise()">Generate!</button>
+  <ion-card *ngIf="activeExcercise != ''">
+    <ion-card-header>
+      Your excercise is:
+    </ion-card-header>
+    <ion-card-content>
+      {{activeExcercise}} - {{activeRepeat}} {{unit}}
+    </ion-card-content>
+  </ion-card>
+  <ion-list>
+    <ion-list-header>
+      Available Excercises
+    </ion-list-header>
+    <ion-item *ngFor="let excercise of excercises">
+      {{excercise}}
+    </ion-item>
+  </ion-list>
+</ion-content>
