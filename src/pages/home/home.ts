@@ -7,7 +7,7 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  public excercises: Array<string> = ["Plank", "Pushup", "Dips"]
+  public excercises: Array<string> = ["Plank", "Pushup", "Dips"];
   public repeats: Array<number> = [10,20,30];
   public activeExcercise: string = "";
   public activeRepeat: number = 10;
