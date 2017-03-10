@@ -7,11 +7,28 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'home.html'
 })
 export class HomePage {
-  public excercises: Array<string> = ["Plank", "Pushup", "Dips"];
+  public excercises: Array<string> = [
+    "Plank",
+    "Pushup",
+    "Dips",
+    "Wallsit",
+    "Squats",
+    "Pencil Squats",
+    "Cycling Crunches",
+    "Legraise",
+    "Legraise with twist",
+    "Dips hold",
+    "Wall Pushups",
+    "Calf Raises",
+    "Forward Bands",
+    "Ellbow Clicks",
+    "Raised Arm Circles",
+    "Plank Pushups",
+  ];
   public repeats: Array<number> = [10,20,30];
   public activeExcercise: string = "";
   public activeRepeat: number = 10;
-  public unit: string = "Wdhg";
+  public unit: string = "Repeats";
 
   constructor(public navCtrl: NavController) {
 
@@ -23,12 +40,15 @@ export class HomePage {
     let indexRepeats = Math.floor((Math.random() * (this.repeats.length))) + 0;
     console.log(indexExcercise, indexRepeats);
     this.activeExcercise = this.excercises[indexExcercise];
-    if (this.activeExcercise == "Plank") {
+    if ((this.activeExcercise == "Plank") || (this.activeExcercise == "Wallsit") || (this.activeExcercise == "Dips hold") || (this.activeExcercise == "Raised Arm Circles")) {
       this.activeRepeat = this.repeats[indexRepeats] * 2;
       this.unit = "s";
+    } else if(this.activeExcercise == "PencilSquats") {
+      this.activeRepeat = this.repeats[indexRepeats] / 2;
+      this.unit = "Repeats/Leg";
     } else {
       this.activeRepeat = this.repeats[indexRepeats];
-      this.unit = "Wdhg";
+      this.unit = "Repeats";
     }
 
   }
