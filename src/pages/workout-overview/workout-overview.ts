@@ -12,7 +12,24 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'workout-overview.html'
 })
 export class WorkoutOverviewPage {
-  public excercises: Array<string> = ["Plank", "Pushup", "Dips"];
+  public excercises: Array<string> = [
+    "Plank",
+    "Pushup",
+    "Dips",
+    "Wallsit",
+    "Squats",
+    "Pencil Squats",
+    "Cycling Crunches",
+    "Legraise",
+    "Legraise with twist",
+    "Dips hold",
+    "Wall Pushups",
+    "Calf Raises",
+    "Forward Bands",
+    "Ellbow Clicks",
+    "Raised Arm Circles",
+    "Plank Pushups",
+  ];
 
   constructor(
     public navCtrl: NavController,
