@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
-
+import { ExcerciseUnits } from '../../models/excerciseUnits';
+import { Excercise } from '../../models/excercise';
 /*
   Generated class for the WorkoutOverview page.
 
@@ -12,24 +13,7 @@ import { NavController, NavParams } from 'ionic-angular';
   templateUrl: 'workout-overview.html'
 })
 export class WorkoutOverviewPage {
-  public excercises: Array<string> = [
-    "Plank",
-    "Pushup",
-    "Dips",
-    "Wallsit",
-    "Squats",
-    "Pencil Squats",
-    "Cycling Crunches",
-    "Legraise",
-    "Legraise with twist",
-    "Dips hold",
-    "Wall Pushups",
-    "Calf Raises",
-    "Forward Bands",
-    "Ellbow Clicks",
-    "Raised Arm Circles",
-    "Plank Pushups",
-  ];
+  public units: ExcerciseUnits = new ExcerciseUnits();
 
   constructor(
     public navCtrl: NavController,
@@ -37,7 +21,7 @@ export class WorkoutOverviewPage {
 
     }
 
-  ionViewDidLoad() {
+  ionViewWillLoad() {
     console.log('ionViewDidLoad WorkoutOverviewPage');
   }
 

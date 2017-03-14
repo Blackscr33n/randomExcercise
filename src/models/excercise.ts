@@ -4,6 +4,7 @@ export class Excercise implements IExcercise {
   id: number;
   name: string;
   image: string;
+  repeatUnit: string;
 
   constructor() {
 
