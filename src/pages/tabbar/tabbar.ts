@@ -22,6 +22,17 @@ export class TabbarPage {
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams) {
+      /*if(/(android)/i.test(navigator.userAgent)) {
+            this.admobId = {
+                banner: 'ca-app-pub-xxx/yyy',
+                interstitial: 'ca-app-pub-jjj/kkk'
+            };
+        } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
+            this.admobId = {
+                banner: 'ca-app-pub-ddd/sss',
+                interstitial: 'ca-app-pub-ppp/zzz'
+            };
+        }*/
     }
 
   ionViewDidLoad() {

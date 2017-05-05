@@ -5,6 +5,10 @@ import { HomePage } from '../pages/home/home';
 import { TabbarPage } from '../pages/tabbar/tabbar';
 import { WorkoutTodoPage } from '../pages/workout-todo/workout-todo';
 import { WorkoutOverviewPage } from '../pages/workout-overview/workout-overview';
+import { BrowserModule } from '@angular/platform-browser';
+import { SplashScreen } from '@ionic-native/splash-screen';
+import { StatusBar } from '@ionic-native/status-bar';
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -15,7 +19,9 @@ import { WorkoutOverviewPage } from '../pages/workout-overview/workout-overview'
     WorkoutOverviewPage
   ],
   imports: [
-    IonicModule.forRoot(MyApp)
+    BrowserModule,
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -25,6 +31,10 @@ import { WorkoutOverviewPage } from '../pages/workout-overview/workout-overview'
     WorkoutTodoPage,
     WorkoutOverviewPage
   ],
-  providers: [{provide: ErrorHandler, useClass: IonicErrorHandler}]
+  providers: [
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    SplashScreen,
+    StatusBar,
+  ]
 })
 export class AppModule {}

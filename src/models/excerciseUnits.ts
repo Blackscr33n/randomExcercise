@@ -5,7 +5,7 @@ export class ExcerciseUnits {
     { id: 0, name: "Plank", image: "", repeatUnit: 's'},
     { id: 1, name: "Pushup", image: "", repeatUnit: 'repeats'},
     { id: 3, name: "Dips", image: "", repeatUnit: 'repeats'},
-    { id: 3, name: "Dips", image: "", repeatUnit: 's'},
+    { id: 3, name: "Dips hold", image: "", repeatUnit: 's'},
     { id: 4, name: "Wallsit", image: "", repeatUnit: 's'},
     { id: 5, name: "Squats", image: "", repeatUnit: 'repeats'},
     { id: 6, name: "Pencil Squats", image: "", repeatUnit: 'repeats/leg'},
