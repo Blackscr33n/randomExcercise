@@ -8,7 +8,9 @@ import { WorkoutOverviewPage } from '../pages/workout-overview/workout-overview'
 import { BrowserModule } from '@angular/platform-browser';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
+import { EditExcercise } from '../pages/workout-todo/edit-excercise/edit-excercise';
 import { IonicStorageModule } from '@ionic/storage';
+import { AdMobFree, AdMobFreeInterstitial } from '@ionic-native/admob-free';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     TabbarPage,
     WorkoutTodoPage,
-    WorkoutOverviewPage
+    WorkoutOverviewPage,
+    EditExcercise
   ],
   imports: [
     BrowserModule,
@@ -29,12 +32,15 @@ import { IonicStorageModule } from '@ionic/storage';
     HomePage,
     TabbarPage,
     WorkoutTodoPage,
-    WorkoutOverviewPage
+    WorkoutOverviewPage,
+    EditExcercise
   ],
   providers: [
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     SplashScreen,
     StatusBar,
+    AdMobFree,
+    AdMobFreeInterstitial
   ]
 })
 export class AppModule {}

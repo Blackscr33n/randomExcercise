@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { NavController, NavParams, Events } from 'ionic-angular';
+import { Storage } from '@ionic/storage';
 //pages
 import { HomePage } from '../home/home';
 import { WorkoutOverviewPage } from '../workout-overview/workout-overview';
@@ -18,25 +19,25 @@ export class TabbarPage {
   tab1: any = HomePage;
   tab2: any = WorkoutTodoPage;
   tab3: any = WorkoutOverviewPage;
+  excercisesCount: number;
 
   constructor(
     public navCtrl: NavController,
-    public navParams: NavParams) {
-      /*if(/(android)/i.test(navigator.userAgent)) {
-            this.admobId = {
-                banner: 'ca-app-pub-xxx/yyy',
-                interstitial: 'ca-app-pub-jjj/kkk'
-            };
-        } else if(/(ipod|iphone|ipad)/i.test(navigator.userAgent)) {
-            this.admobId = {
-                banner: 'ca-app-pub-ddd/sss',
-                interstitial: 'ca-app-pub-ppp/zzz'
-            };
-        }*/
-    }
+    public navParams: NavParams,
+    public storage: Storage,
+    public events: Events
+  ) {
+    this.storage.get('todo-list').then((todoList) => {
+      this.excercisesCount = JSON.parse(todoList).length;
+    });
+
+    events.subscribe('excercises:changed', (length) => {
+      // user and time are the same arguments passed in `events.publish(user, time)`
+      this.excercisesCount = length;
+    });
+  }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad TabbarPage');
   }
 
 }

@@ -1,15 +1,15 @@
 <ion-header>
-  <ion-navbar>
+  <ion-navbar color="primary">
     <ion-title>
-      Random Excercise
+      Home
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
   <span text-center>Returns a random Excercise to steel your body</span>
-  <button block ion-button (click)="randomExcercise()">Generate!</button>
-  <ion-card *ngIf="activeExcercise != ''">
+  <button block color="secondary" ion-button (click)="randomExcercise()">Generate!</button>
+  <ion-card *ngIf="(activeExcercise != null)">
     <ion-card-header>
       Your excercise is:
     </ion-card-header>

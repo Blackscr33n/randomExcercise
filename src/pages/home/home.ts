@@ -3,6 +3,7 @@ import { NavController } from 'ionic-angular';
 import { ExcerciseUnits } from '../../models/excerciseUnits';
 import { Excercise } from '../../models/excercise';
 import { Storage } from '@ionic/storage';
+import { Events } from 'ionic-angular';
 
 @Component({
   selector: 'page-home',
@@ -17,9 +18,10 @@ export class HomePage {
 
   constructor(
     public navCtrl: NavController,
-    public storage: Storage
+    public storage: Storage,
+    public events: Events,
   ) {
-    this.randomExcercise();
+
   }
 
   randomExcercise() {
@@ -56,6 +58,7 @@ export class HomePage {
         });
         if (foundElem === undefined) {
           val.push(fullExcercise);
+          this.events.publish('excercises:changed', val.length);
           this.storage.set('todo-list', JSON.stringify(val)).then(() => {
             this.storage.get('todo-list').then((nval) => {
               console.log(JSON.parse(nval));
@@ -71,6 +74,7 @@ export class HomePage {
           });
         }
       } else {
+        this.events.publish('excercises:changed', 1);
         this.storage.set('todo-list', JSON.stringify([fullExcercise])).then(() => {
           this.storage.get('todo-list').then((nval) => {
             console.log(JSON.parse(nval));

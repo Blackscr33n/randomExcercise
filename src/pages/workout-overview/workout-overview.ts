@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { ExcerciseUnits } from '../../models/excerciseUnits';
-import { Excercise } from '../../models/excercise';
 /*
   Generated class for the WorkoutOverview page.
 
