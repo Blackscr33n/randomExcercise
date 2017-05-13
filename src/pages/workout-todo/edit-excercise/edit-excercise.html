@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-buttons start>
+      <button ion-button icon-only (click)="close()">
+        Save
+      </button>
+    </ion-buttons>
+    <ion-title>edit-excercise</ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+  <ion-list>
+        <ion-item>
+          <ion-range min="0" max="{{maxRepeats}}" pin="true" [(ngModel)]="repeats">
+            <ion-label range-left>0</ion-label>
+            <ion-label range-right>{{repeats}}</ion-label>
+          </ion-range>
+        </ion-item>
+      </ion-list>
+</ion-content>
